@@ -1,7 +1,6 @@
-package ma.emsi.searchservice.models;
+package ma.emsi.orderservice.models;
 
 import lombok.Data;
-import ma.emsi.searchservice.enums.Category;
 
 @Data
 public class Product {
@@ -10,5 +9,4 @@ public class Product {
     private String description;
     private double price;
     private int quantity;
-    private String category;
 }

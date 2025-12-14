@@ -1,17 +1,19 @@
 package ma.emsi.searchservice.feign;
 
 import ma.emsi.searchservice.models.Product;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.hateoas.PagedModel;
+import ma.emsi.searchservice.models.ProductResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import reactivefeign.spring.config.ReactiveFeignClient;
+import reactor.core.publisher.Mono;
 
-@FeignClient(name = "catalog-service")
+@ReactiveFeignClient(name = "catalog-service")
 public interface ProductRestClient {
 
     @GetMapping("/products/{id}")
-    Product getProductById(@PathVariable Long id);
+    Mono<Product> getProductById(@PathVariable("id") Long id);
 
     @GetMapping("/products")
-    PagedModel<Product> getAllProducts();
+    Mono<ProductResponse> getAllProducts();
+    // On reçoit UN objet réponse (Mono) de manière asynchrone
 }

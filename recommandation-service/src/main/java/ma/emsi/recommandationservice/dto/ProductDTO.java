@@ -1,14 +1,12 @@
-package ma.emsi.searchservice.models;
+package ma.emsi.recommandationservice.dto;
 
 import lombok.Data;
-import ma.emsi.searchservice.enums.Category;
 
 @Data
-public class Product {
+public class ProductDTO {
     private Long id;
     private String name;
     private String description;
     private double price;
-    private int quantity;
     private String category;
 }

@@ -1,10 +1,11 @@
-package ma.emsi.searchservice.models;
+// Fichier: PagedProductResponse.java
+package ma.emsi.orderservice.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class ProductResponse {
+public class PagedProductResponse {
     @JsonProperty("_embedded")
     private ProductEmbedded embedded;
 }
